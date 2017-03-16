@@ -11,5 +11,5 @@ class Treasure(models.Model):
     location = models.CharField(max_length=100)
     img_url = models.CharField(max_length=100)
 
-    def str(self):
-        return self.name
+    def __str__(self):
+        return str(self.name)
