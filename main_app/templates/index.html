@@ -6,7 +6,12 @@
 </head>
 <body>
 <h1>Treasuregram</h1>
-<p>{{treasure_name}}</p>
-<p>{{treasure_val}}</p>
+{% for treasure in treasures %}
+    <p>{{treasure.name}}</p>
+    <p>{{treasure.value}}</p>
+    <p>{{treasure.material}}</p>
+    <p>{{treasure.location}}</p>
+    <p>{{treasure.img_url}}</p>
+{% endfor %}
 </body>
 </html>
