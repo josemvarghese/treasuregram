@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Treasuregram</title>
+    <title>Title</title>
 </head>
 <body>
-<h1>Treasuregram</h1>
-{% for treasure in treasures %}
-    <!--<p>{{treasure.pk}}</p>-->
-<a href="/{{treasure.pk}}/"><h1>{{treasure.name}}</h1></a>
+    <p>{{treasure.pk}}</p>
+    <p>{{treasure.name}}</p>
     <p>{{treasure.value}}</p>
     <p>{{treasure.material}}</p>
     <p>{{treasure.location}}</p>
     <p>{{treasure.img_url}}</p>
-{% endfor %}
 </body>
 </html>

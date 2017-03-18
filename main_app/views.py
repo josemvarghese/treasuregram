@@ -9,3 +9,8 @@ def index(request):
     context=Treasure.objects.all()
     # context['treasures'] = {'name':"jose",'value':500, 'material':'gold','location':'india In','img_url':'jose.jpg'}
     return render(request,'index.html',{'treasures':context})
+
+
+def detail(request,detail_id):
+    context = Treasure.objects.get(pk=detail_id)
+    return render(request, 'detail.html', {'treasure': context})
