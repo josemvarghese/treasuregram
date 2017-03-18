@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% block content%}
+<div align="center">
+
     <p>{{treasure.pk}}</p>
     <p>{{treasure.name}}</p>
     <p>{{treasure.value}}</p>
     <p>{{treasure.material}}</p>
     <p>{{treasure.location}}</p>
     <p>{{treasure.img_url}}</p>
-</body>
-</html>
+</div>
+{% endblock %}
