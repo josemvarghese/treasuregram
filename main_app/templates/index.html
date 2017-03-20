@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content%}
+{% for treasure in treasures %}
+<div align="center">
+
+<a href="/{{treasure.pk}}/"><h1>{{treasure.name}}</h1></a>
+    <p>{{treasure.value}}</p>
+    <p>{{treasure.material}}</p>
+    <p>{{treasure.location}}</p>
+    <p>{{treasure.img_url}}</p>
+{% endfor %}
+
+</div>
+{% endblock %}
