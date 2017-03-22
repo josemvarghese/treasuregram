@@ -3,7 +3,9 @@ from django.http import HttpResponse,HttpResponseRedirect
 from . models import Treasure
 from datetime import datetime
 from .forms import TreasureForm
+from django.contrib.auth.models import User
 # Create your views here.
+
 
 def index(request):
     # name  = 'Gold Nugget'
@@ -24,7 +26,9 @@ def post_treasure(request):
     if form.is_valid():
         # treasure = Treasure(name=form.cleaned_data['name'],value=form.cleaned_data['value'],material=form.cleaned_data['material'],location=form.cleaned_data['location'],img_url=form.cleaned_data['img_url'])
         # treasure.save()
-        form.save(commit=True)
+        treasure = form.save(commit=False)
+        treasure.user = request.user
+        treasure.save()
     return HttpResponseRedirect("/")
 
 
@@ -32,6 +36,15 @@ def delete_treasure(request,treasure_id):
     tresure = Treasure.objects.get(pk=treasure_id)
     tresure.delete()
     return HttpResponseRedirect("/")
+
+
+def profile(request,username):
+    user = User.objects.get(username=username)
+    treasures = Treasure.objects.filter(user=user)
+    return render(request,'profile.html',{'treasures':treasures,'username':username})
+
+
+
 
 
 

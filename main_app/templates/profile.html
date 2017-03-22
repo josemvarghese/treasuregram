@@ -1,10 +1,9 @@
 {% extends 'base.html'%}
 {% block content%}
+<div class="col-md-4 col-md-offset-4" align="center">{{username}}</div>
 {% for treasure in treasures %}
 <div align="center">
-
 <a href="/{{treasure.pk}}/"><h1>{{treasure.name}}</h1></a>
-<a href="user/{{treasure.user}}/"><h4>{{treasure.user}}</h4></a>
     <p>{{treasure.value}}</p>
     <p>{{treasure.material}}</p>
     <p>{{treasure.location}}</p>
@@ -18,14 +17,7 @@
 
 </div>
 
-<div class="col-md-4 col-md-offset-3">
-    <form ENCTYPE="multipart/form-data"  action="/post_url/" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit">
-    </form>
 
-</div>
 
 {% endblock %}
 
