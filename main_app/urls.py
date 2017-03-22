@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^([0-9]+)/$', views.detail,name='detail'),
     url(r'^post_url/$', views.post_treasure, name="post_treasure"),
+    url(r'^delete_treasure/([0-9]+)/$', views.delete_treasure, name="delete_treasure"),
 ]

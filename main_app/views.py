@@ -26,3 +26,12 @@ def post_treasure(request):
         # treasure.save()
         form.save(commit=True)
     return HttpResponseRedirect("/")
+
+
+def delete_treasure(request,treasure_id):
+    tresure = Treasure.objects.get(pk=treasure_id)
+    tresure.delete()
+    return HttpResponseRedirect("/")
+
+
+

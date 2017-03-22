@@ -8,6 +8,11 @@
     <p>{{treasure.material}}</p>
     <p>{{treasure.location}}</p>
     <img src="{{treasure.img_url.url}}" height="100" width="100">
+    <!--<a href="delete_treasure/{{treasure.pk}}/">delete</a>-->
+    <form   action="delete_treasure/{{treasure.pk}}/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="delete">
+    </form>
 {% endfor %}
 
 </div>
