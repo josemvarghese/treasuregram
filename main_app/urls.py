@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^delete_treasure/([0-9]+)/$', views.delete_treasure, name="delete_treasure"),
     url(r'^user/(\w+)/$', views.profile, name="profile"),
     url(r'^login/$', views.login_view, name="login"),
+    url(r'^logout/$', views.logout_view, name="logout"),
 ]
